@@ -1,5 +1,4 @@
 #+TITLE: Duncan Bennett's Website
 #+AUTHOR: Duncan Bennett
-* Duncan Bennett's Website
 ** About
 ** Hello World!
