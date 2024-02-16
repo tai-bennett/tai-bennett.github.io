@@ -1,1 +1,5 @@
-/pages/**.org
+# ignore all org files
+.org
+
+# except for the README file
+!README.org
