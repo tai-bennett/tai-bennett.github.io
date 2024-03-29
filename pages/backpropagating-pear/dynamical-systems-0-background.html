@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-29 Fri 12:16 -->
+<!-- 2024-03-29 Fri 09:36 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Equivalence, classification and invariants</title>
+<title>Background</title>
 <meta name="author" content="Duncan Bennett" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -217,142 +217,55 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Equivalence, classification and invariants</h1>
+<h1 class="title">Background</h1>
 <div id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc0c50ac">1. Smooth conjugacy and moduli for maps</a></li>
-<li><a href="#orgbaa188c">2. Topological conjugacy, factors and structural stability</a></li>
+<li><a href="#org69c3e40">1. Topology on differentiable maps</a></li>
 </ul>
 </div>
 </div>
 <p>
-In this section, we are going to look into the problem of studying
-the asymptotic behavior of smooth dynamical systems from a different
-angle. We start with the equivalence classes we should consider in
-dynamical systems (conjugacy classes) and use those to make some
-classifications. Then we look more in depth at the topological perspective.
-In particular, we show some examples of moduli which are local topological
-invariants of dynamical systems which can sometimes extend to entire orbits.
+This section holds some notes on some background information
+that might be useful going forward.
 </p>
-<div id="outline-container-orgc0c50ac" class="outline-2">
-<h2 id="orgc0c50ac"><span class="section-number-2">1.</span> Smooth conjugacy and moduli for maps</h2>
+
+<div id="outline-container-org69c3e40" class="outline-2">
+<h2 id="org69c3e40"><span class="section-number-2">1.</span> Topology on differentiable maps</h2>
 <div class="outline-text-2" id="text-1">
 <p>
-<b>Definition:</b> Two \(C^r\) maps \(f: M \to M\) and \(g: N \to N\) are said to be
-\(C^m\)-<b>equivalent</b> or \(C^m\)-<b>conjugate</b> if there exists a \(C^m\) diffeomorphism
-\(h : M \to N\) such that \(f = h^{-1} \circ g \circ h\). We call \(h\) the <b>conjugacy</b>.
-</p>
-
-<p>
-This definition basically measn that we wish to look at dynamical systems up
-to a change of coordinates.
-</p>
-
-<p>
-Recall, the basis of the \(C^r\) topology consists of neighborhoods
+<b>Definition:</b> Let \(M,N\) be \(C^r\) manifolds of dimension \(n\) for some \(r\) finite. Then
+we may define a topology on \(C^r(M,N)\) using the topology of \(R^n\) and the charts
+for each manifold. Let \(\Phi = \{ \varphi_i, U_i \}_{i \in \Lambda}\) be a
+<b>locally finite</b> set of charts (meaning each point \(x \in M\) lies in finitely many \(U_i\)'s).
+Let \(K = \{K_i\}_{i \in \Lambda}\) be a family of compact sets contined in each
+\(U_i\) respectively. Let \(\Psi = \{\psi_i, V_i\}_{i \in \Lambda}\) be a family of
+charts on \(N\) and finally \(\varepsilon = \{\varepsilon_i\}_{i \in \Lambda}\) a
+family of positive numbers. Let \(f \in C^r(M,N)\) take \(K_i\) into \(V_i\).
+A <b>strong basic neighborhood</b> of \(f \in C^r(M,N)\) is
 </p>
 
 \begin{align*}
 \mathcal{N}^r(f; \Phi, \Psi, K, \varepsilon)
 \end{align*}
-
 <p>
-that contain maps \(g \in C^r(M,M)\) such that
-</p>
-
-\begin{align*}
-\| D^k(\psi_i f \varphi_i^{-1})(x) - D^k(\psi_i g \varphi_i^{-1})(x)\| < \varepsilon_i
-\end{align*}
-
-<p>
-Intuitively, we are making sure that all derivatives are close to each other.
-</p>
-
-<p>
-<b>Definition:</b> Let \(U\) be an open subset in the space \(C^r(M,M)\) of \(C^r\) maps of
-\(M\) into itself with the \(C^r\) topology. A continuous function \(F: U \to \mathbb{R}\)
-is called a \(C^m\) <b>modulus</b> if there exists a \(\delta > 0\) such that \(F(f) = F(g)\) for
-any two maps \(f,g \in U\) that are \(C^m\) equivalent via a diffeomorphism \(h\) with
-\(d_{C^m}(h, id) < \delta\).
-</p>
-
-<p>
-Next, we show some examples of moduli. One example of a modulus is a mapping
-to the spectrum of periodic points. Let \(f\) have a periodic point \(p\). Let \(g\) be
-a conjugate of \(f\) by \(h\). Then \(g\) also has \(p\) as a periodic point. Suppose
-that \(h\) is a \(C^m\) equivalence.
-</p>
-
-\begin{align*}
-Df_x^n = Dh^{-1}_{g^nhx} \cird Dg^n_{hx} \circ Dh_x
-\end{align*}
-<p>
-and in particular if $f<sup>np</sup> = p we have
-</p>
-
-\begin{align*}
-Df^n_p = (Dh_p)^{-1} Dg^n_{hp} Dh_p
-\end{align*}
-
-<p>
-Then the operators \(Df^n_p\) and \(Dg^n_{hp}\) are conjugate and have the same spectrum.
-Then, for example, the mapping \(F_i : f \mapsto \sigma(Df^n_p)_i\) is well defined on
-conjugacy classes. Since this is true for all conjugacies \(h\) then our \(\delta\) can
-be arbitrary.
-</p>
-
-<p>
-Consider \(f \in C^1(M,M)\).
-Then consider a periodic point \(p\) of \(f\) whose spectrum does not contain \(1\). Let \(U\)
-be a neighborhood of \(f\) such that each \(g \in U\) so that \(g\) has a unique periodic
-point (of the same period) close to \(p\). Then define \(F: U \to \mathbb{R}\) to map the
-function to the largest eigenvalue at the periodic point. That is
+which contains all \(g \in C^r(M,N)\) such that for all \(i \in \Lambda\)
+\(g(K_i) \subset V_i\) and
 </p>
 \begin{align*}
-F(g) &= \lambda_1 \in \sigma(D^n_q).
+\| D^k(\psi_i f \varphi_i^{-1}(x) - D^k(\psi_i g \varphi_i^{-1}(x) \| < \varepsilon_i
 \end{align*}
-</div>
-</div>
-
-<div id="outline-container-orgbaa188c" class="outline-2">
-<h2 id="orgbaa188c"><span class="section-number-2">2.</span> Topological conjugacy, factors and structural stability</h2>
-<div class="outline-text-2" id="text-2">
 <p>
-<b>Definition:</b> For \(r \geq 0\) two \(C^r\) maps \(f: M \to M\) and \(g: N \to N\)
-are said to be <b>topologically conjugate</b> if there exists a homeomorphism
-\(h : M \to N\) such that \(f = h^{-1} \circ g \circ h\).
-</p>
-
-<p>
-<b>Definition:</b> A map \(g: N \to N\) is a <b>factor</b> (or <b>topological factor</b>) of
-\(f : M \to M\) if there exists a surjective continuous map \(h : M \to N\) such that
-\(h \circ f = g \circ h\). The map \(h\) is called a <b>semiconjugacy</b>.
-</p>
-
-<p>
-The following two definitions can also be extended to flows in a natural way.
-</p>
-
-<p>
-<b>Definition:</b> A \(C^r\) map \(f\) is \(C^m\) <b>structurally stable</b> (\(1 \leq m \leq r\))
-if there exists a neighborhood \(U\) of \(f\) in the \(C^m\) topology such that every
-map \(g \in U\) is topologically conjugate to \(f\).
-</p>
-
-<p>
-<b>Definition:</b> A \(C^r\) map is \(C^m\) <b>strongly structurally stable</b> if it is
-structurally stable and in addition for any \(g \in U\) one can choose a conjugating
-homeomorphism \(h = h_g\) in such a way that both \(h_g\) and \(h_g^{-1}\) uniformly
-converge to the identity as \(g\) converges to \(f\) in \(C^m\) topology.
+for all \(x \in \varphi_i(K_i)\) and \(k = 0, \ldots , r\). These sets form the basis
+of the \(C^r(M,N)\) <b>strong topology</b>.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-03-29 Fri 12:16</p>
+<p class="date">Created: 2024-03-29 Fri 09:36</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
