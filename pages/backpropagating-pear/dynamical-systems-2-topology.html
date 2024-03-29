@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-29 Fri 12:16 -->
+<!-- 2024-03-29 Fri 13:13 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Equivalence, classification and invariants</title>
@@ -222,8 +222,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgc0c50ac">1. Smooth conjugacy and moduli for maps</a></li>
-<li><a href="#orgbaa188c">2. Topological conjugacy, factors and structural stability</a></li>
+<li><a href="#org752a81c">1. Smooth conjugacy and moduli for maps</a></li>
+<li><a href="#orge51d74f">2. Topological conjugacy, factors and structural stability</a></li>
+<li><a href="#orge748915">3. Topological classification of expanding maps on a circle</a></li>
+<li><a href="#orgd798213">4. Coding, horseshoes and Markov partitions</a></li>
 </ul>
 </div>
 </div>
@@ -236,8 +238,8 @@ classifications. Then we look more in depth at the topological perspective.
 In particular, we show some examples of moduli which are local topological
 invariants of dynamical systems which can sometimes extend to entire orbits.
 </p>
-<div id="outline-container-orgc0c50ac" class="outline-2">
-<h2 id="orgc0c50ac"><span class="section-number-2">1.</span> Smooth conjugacy and moduli for maps</h2>
+<div id="outline-container-org752a81c" class="outline-2">
+<h2 id="org752a81c"><span class="section-number-2">1.</span> Smooth conjugacy and moduli for maps</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 <b>Definition:</b> Two \(C^r\) maps \(f: M \to M\) and \(g: N \to N\) are said to be
@@ -316,8 +318,8 @@ F(g) &= \lambda_1 \in \sigma(D^n_q).
 </div>
 </div>
 
-<div id="outline-container-orgbaa188c" class="outline-2">
-<h2 id="orgbaa188c"><span class="section-number-2">2.</span> Topological conjugacy, factors and structural stability</h2>
+<div id="outline-container-orge51d74f" class="outline-2">
+<h2 id="orge51d74f"><span class="section-number-2">2.</span> Topological conjugacy, factors and structural stability</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 <b>Definition:</b> For \(r \geq 0\) two \(C^r\) maps \(f: M \to M\) and \(g: N \to N\)
@@ -349,10 +351,110 @@ converge to the identity as \(g\) converges to \(f\) in \(C^m\) topology.
 </p>
 </div>
 </div>
+
+<div id="outline-container-orge748915" class="outline-2">
+<h2 id="orge748915"><span class="section-number-2">3.</span> Topological classification of expanding maps on a circle</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+<b>Defintion:</b> A continuous map \(f : X \to X\) is called <b>expanding</b>
+if form some \(\mu > 1\), *&epsilon;<sub>0</sub> &gt; 0$ and every \(x,y \in X\) with
+\(x \neq y\) and \(d(x,y) < \varepsilon_0\) one has
+</p>
+
+\begin{align*}
+d(f(x), f(y)) > \mu d(x,y).
+\end{align*}
+
+<p>
+The maps \(E_m : S^1 \to S^1\), \(|m| \geq 2\),
+</p>
+
+\begin{align*}
+E_m(z) = z^m
+\end{align*}
+<p>
+are the toy examples of expanding maps on the circle. One can also extend these
+maps to high dimensional tori. For example, \(E_m \times E_k\). In addition, any
+matrix
+</p>
+\begin{align*}
+L = \begin{pmatrix}
+a & b \\ c & d
+\end{pmatrix}
+\end{align*}
+<p>
+with \(a,b,c,d \in \mathbb{Z}\) and \(\sigma(L) \subset \mathbb{C} \setminus B_1(0)\)
+can be projected down to the torus and form an expanding map
+</p>
+\begin{align*}
+F_L(x,y) = (ax + by, cx + dy) (\text{mod } 1).
+\end{align*}
+<p>
+This also generalizes to higher dimensional tori.
+</p>
+
+<p>
+<b>Proposition:</b> If \(M\) is a compact Riemannian manifold and \(f\) is a differentiable
+map such that there exists \(\mu > 1\) satisfying
+</p>
+\begin{align*}
+\| D_x fv \| > \mu \| v \|
+\end{align*}
+<p>
+for any \(v \in T_xM \setminus \{0\}\). Then \(f\) is an expanding map.
+</p>
+
+<p>
+<b>Definition:</b> If \(f: S^1 \to S^1\) and \(F\) is any life of \(f\) then \(F(x+1) - F(x)\)
+is called the <b>degree</b> of \(f\) and denoted by deg\((f)\). Recall that a life is a map
+\(F: \mathbb{R} \to \mathbb{R}\) such that
+</p>
+\begin{align*}
+f \circ \pi = \pi \circ F
+\end{align*}
+<p>
+where \(\pi : \mathbb{R} \to S^1\) is the universal covering of \(S^1 = \mathbb{R}/\mathbb{Z}\).
+</p>
+
+<p>
+It can be shown that the degree is continuous and thus locally constant in the \(C^0\) uniform topology.
+</p>
+
+<p>
+<b>Theorem:</b> Everying expanding map \(f\) of the circle of degree \(k\) is toplogically
+conjugate to the map \(E_k\). Furthermore, if \(f\) is close enough to \(E_k\) in the
+\(C^0\) topology, then the conjugating homeomorphism can be chose close to the identity.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd798213" class="outline-2">
+<h2 id="orgd798213"><span class="section-number-2">4.</span> Coding, horseshoes and Markov partitions</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+Semiconjugacies between one-sided shifts and expand-
+ing maps of the circle represent a simple but very effective example of coding
+of orbits for a smooth system, a concept alluded to at the beginning of Section
+1.9. In general one can try to code orbits of, say, a diffeomorphism, or even
+a homeomorphism f, by dividing its phase space \(X\) into finitely many pieces
+\(X_0, \ldots , X_{N - 1}\) and registering to which of the pieces successive iterates of a
+point \(x \in X\) belong. Two basic difficulties appear in this construction:
+</p>
+
+\begin{enumerate}
+\item If the pieces overlap, then each point does not have a unique sequence representation.
+\item all points in the intersection
+\begin{align*}
+\bigcap_{n \in \mathbb{Z}} f^{-n} (X_{\omega_n})
+\end{align*}
+are coded by the same sequence $\omega = \{\omega_n\}_{n \in \mathbb{Z}}$.
+\end{enumerate}
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-03-29 Fri 12:16</p>
+<p class="date">Created: 2024-03-29 Fri 13:13</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
