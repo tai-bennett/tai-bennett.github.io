@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-28 Thu 22:07 -->
+<!-- 2024-03-28 Thu 22:10 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Some First Examples in Dynamical Systems</title>
@@ -222,12 +222,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4d3aeb2">1. Maps with stable asymptotic behavior</a></li>
-<li><a href="#org332b15d">2. Linear Maps</a></li>
-<li><a href="#org6da4b83">3. Rotations of the circle</a></li>
-<li><a href="#orgc300f9a">4. Translations on the torus</a></li>
-<li><a href="#org7bce69c">5. Gradient flows</a></li>
-<li><a href="#org44d2e58">6. Expanding Maps</a></li>
+<li><a href="#orgced3030">1. Maps with stable asymptotic behavior</a></li>
+<li><a href="#org30623a3">2. Linear Maps</a></li>
+<li><a href="#org56166de">3. Rotations of the circle</a></li>
+<li><a href="#orga5ad504">4. Translations on the torus</a></li>
+<li><a href="#org4c2c8fb">5. Gradient flows</a></li>
+<li><a href="#org5c9a7f6">6. Expanding Maps</a></li>
 </ul>
 </div>
 </div>
@@ -237,8 +237,8 @@ have some "toy" examples for each major concept in the area. We
 proceed with some examples from simple to more complicated.
 </p>
 
-<div id="outline-container-org4d3aeb2" class="outline-2">
-<h2 id="org4d3aeb2"><span class="section-number-2">1.</span> Maps with stable asymptotic behavior</h2>
+<div id="outline-container-orgced3030" class="outline-2">
+<h2 id="orgced3030"><span class="section-number-2">1.</span> Maps with stable asymptotic behavior</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 One major tool in dynamical systems that is used very often in
@@ -295,8 +295,8 @@ topology.
 </div>
 </div>
 
-<div id="outline-container-org332b15d" class="outline-2">
-<h2 id="org332b15d"><span class="section-number-2">2.</span> Linear Maps</h2>
+<div id="outline-container-org30623a3" class="outline-2">
+<h2 id="org30623a3"><span class="section-number-2">2.</span> Linear Maps</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Like in many other fields, it is often useful to linearize locally and to
@@ -337,8 +337,8 @@ define <b>hyperbolicity</b> of a linear dynamical system is by triviality of \(E
 </p>
 </div>
 </div>
-<div id="outline-container-org6da4b83" class="outline-2">
-<h2 id="org6da4b83"><span class="section-number-2">3.</span> Rotations of the circle</h2>
+<div id="outline-container-org56166de" class="outline-2">
+<h2 id="org56166de"><span class="section-number-2">3.</span> Rotations of the circle</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 In the case when a linear dynamical systems consists of only complex
@@ -374,8 +374,8 @@ think of minimality and periodicity as opposite ideas.
 </div>
 </div>
 
-<div id="outline-container-orgc300f9a" class="outline-2">
-<h2 id="orgc300f9a"><span class="section-number-2">4.</span> Translations on the torus</h2>
+<div id="outline-container-orga5ad504" class="outline-2">
+<h2 id="orga5ad504"><span class="section-number-2">4.</span> Translations on the torus</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 We can take the ideas of the last section and apply them to higher dimensional
@@ -401,8 +401,8 @@ but on those submanifolds the dynamical system is minimal.
 </div>
 </div>
 
-<div id="outline-container-org7bce69c" class="outline-2">
-<h2 id="org7bce69c"><span class="section-number-2">5.</span> Gradient flows</h2>
+<div id="outline-container-org4c2c8fb" class="outline-2">
+<h2 id="org4c2c8fb"><span class="section-number-2">5.</span> Gradient flows</h2>
 <div class="outline-text-2" id="text-5">
 <p>
 <b>Definition:</b> A point \(y \in X\) is called an $&omega;$-<b>limit point</b> (or
@@ -413,8 +413,8 @@ denoted \(\omega(x)\), is called the \(\omega\) limit set. Similarly for \(\alph
 </p>
 
 \begin{align*}
-\omega(x) &= \bigcup_{T=0}^{\infty} \overline{\left ( \bigcup_{t \geq T \varphi^t(x) \right )},
-\alpha(x) &= \bigcup_{T=0}^{- \infty} \overline{\left ( \bigcup_{t \leq T \varphi^t(x) \right )},
+\omega(x) &= \bigcup_{T=0}^{\infty} \overline{\left ( \bigcup_{t \geq T} \varphi^t(x) \right )},
+\alpha(x) &= \bigcup_{T=0}^{- \infty} \overline{\left ( \bigcup_{t \leq T} \varphi^t(x) \right )},
 \end{align*}
 
 <p>
@@ -440,8 +440,8 @@ point or an infinite set.
 </div>
 </div>
 
-<div id="outline-container-org44d2e58" class="outline-2">
-<h2 id="org44d2e58"><span class="section-number-2">6.</span> Expanding Maps</h2>
+<div id="outline-container-org5c9a7f6" class="outline-2">
+<h2 id="org5c9a7f6"><span class="section-number-2">6.</span> Expanding Maps</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Let \(E_2(x) = 2x \text{ mod} 1\) be the angle doubling map on the circle.
@@ -469,7 +469,7 @@ a dense orbit.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-03-28 Thu 22:07</p>
+<p class="date">Created: 2024-03-28 Thu 22:10</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
