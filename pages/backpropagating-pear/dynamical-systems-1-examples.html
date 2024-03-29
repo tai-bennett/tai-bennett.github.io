@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-03-28 Thu 22:10 -->
+<!-- 2024-03-28 Thu 22:14 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Some First Examples in Dynamical Systems</title>
@@ -222,12 +222,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orgced3030">1. Maps with stable asymptotic behavior</a></li>
-<li><a href="#org30623a3">2. Linear Maps</a></li>
-<li><a href="#org56166de">3. Rotations of the circle</a></li>
-<li><a href="#orga5ad504">4. Translations on the torus</a></li>
-<li><a href="#org4c2c8fb">5. Gradient flows</a></li>
-<li><a href="#org5c9a7f6">6. Expanding Maps</a></li>
+<li><a href="#orgb621130">1. Maps with stable asymptotic behavior</a></li>
+<li><a href="#org7e8ffca">2. Linear Maps</a></li>
+<li><a href="#orgbe053ef">3. Rotations of the circle</a></li>
+<li><a href="#orga10e73e">4. Translations on the torus</a></li>
+<li><a href="#orgc0c8df0">5. Gradient flows</a></li>
+<li><a href="#org2f04d27">6. Expanding Maps</a></li>
 </ul>
 </div>
 </div>
@@ -237,8 +237,8 @@ have some "toy" examples for each major concept in the area. We
 proceed with some examples from simple to more complicated.
 </p>
 
-<div id="outline-container-orgced3030" class="outline-2">
-<h2 id="orgced3030"><span class="section-number-2">1.</span> Maps with stable asymptotic behavior</h2>
+<div id="outline-container-orgb621130" class="outline-2">
+<h2 id="orgb621130"><span class="section-number-2">1.</span> Maps with stable asymptotic behavior</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 One major tool in dynamical systems that is used very often in
@@ -295,8 +295,8 @@ topology.
 </div>
 </div>
 
-<div id="outline-container-org30623a3" class="outline-2">
-<h2 id="org30623a3"><span class="section-number-2">2.</span> Linear Maps</h2>
+<div id="outline-container-org7e8ffca" class="outline-2">
+<h2 id="org7e8ffca"><span class="section-number-2">2.</span> Linear Maps</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 Like in many other fields, it is often useful to linearize locally and to
@@ -337,8 +337,8 @@ define <b>hyperbolicity</b> of a linear dynamical system is by triviality of \(E
 </p>
 </div>
 </div>
-<div id="outline-container-org56166de" class="outline-2">
-<h2 id="org56166de"><span class="section-number-2">3.</span> Rotations of the circle</h2>
+<div id="outline-container-orgbe053ef" class="outline-2">
+<h2 id="orgbe053ef"><span class="section-number-2">3.</span> Rotations of the circle</h2>
 <div class="outline-text-2" id="text-3">
 <p>
 In the case when a linear dynamical systems consists of only complex
@@ -374,8 +374,8 @@ think of minimality and periodicity as opposite ideas.
 </div>
 </div>
 
-<div id="outline-container-orga5ad504" class="outline-2">
-<h2 id="orga5ad504"><span class="section-number-2">4.</span> Translations on the torus</h2>
+<div id="outline-container-orga10e73e" class="outline-2">
+<h2 id="orga10e73e"><span class="section-number-2">4.</span> Translations on the torus</h2>
 <div class="outline-text-2" id="text-4">
 <p>
 We can take the ideas of the last section and apply them to higher dimensional
@@ -386,7 +386,7 @@ not alternatives to each other.
 
 <p>
 Let \(T_{\lambda} : \mathbb{T}^n \to \mathbb{T}^n\) be the translation map by \(\gamma\)
-on the \(n\)-dimensional torus. That is \(T_{\gamma}(x_1, \ldots , x_n) = (x_1 + \gamma_1, \ldots, x_n + \gamma_n) \text{ mod} 1\).
+on the \(n\)-dimensional torus. That is \[T_{\gamma}(x_1, \ldots , x_n) = (x_1 + \gamma_1, \ldots, x_n + \gamma_n) \text{ mod } 1.\]
 </p>
 
 <p>
@@ -401,25 +401,25 @@ but on those submanifolds the dynamical system is minimal.
 </div>
 </div>
 
-<div id="outline-container-org4c2c8fb" class="outline-2">
-<h2 id="org4c2c8fb"><span class="section-number-2">5.</span> Gradient flows</h2>
+<div id="outline-container-orgc0c8df0" class="outline-2">
+<h2 id="orgc0c8df0"><span class="section-number-2">5.</span> Gradient flows</h2>
 <div class="outline-text-2" id="text-5">
 <p>
-<b>Definition:</b> A point \(y \in X\) is called an $&omega;$-<b>limit point</b> (or
-and $&alpha;$-<b>limit point</b> for a point \(x \in X\) if there exists a sequence
+<b>Definition:</b> A point \(y \in X\) is called an \(\omega\)-<b>limit point</b> (or
+and \(\alpha\)-<b>limit point</b> for a point \(x \in X\) if there exists a sequence
 of moments of time going to \(+ \infty\) (or \(- \infty\)) such that the images
 of \(x\) converge to \(y\). The set of all \(\omega\) limit points for \(x\),
 denoted \(\omega(x)\), is called the \(\omega\) limit set. Similarly for \(\alpha\).
 </p>
 
 \begin{align*}
-\omega(x) &= \bigcup_{T=0}^{\infty} \overline{\left ( \bigcup_{t \geq T} \varphi^t(x) \right )},
+\omega(x) &= \bigcup_{T=0}^{\infty} \overline{\left ( \bigcup_{t \geq T} \varphi^t(x) \right )}\\
 \alpha(x) &= \bigcup_{T=0}^{- \infty} \overline{\left ( \bigcup_{t \leq T} \varphi^t(x) \right )},
 \end{align*}
 
 <p>
 Thus if \(x\) is compact, the sets \(\omega(x)\) and \(\alpha(x)\) are nonempty and every
-point sooner or later comes to any given neighborhood of its $&omega;$-limit set and stays
+point sooner or later comes to any given neighborhood of its \(\omega\)-limit set and stays
 there.
 </p>
 
@@ -440,8 +440,8 @@ point or an infinite set.
 </div>
 </div>
 
-<div id="outline-container-org5c9a7f6" class="outline-2">
-<h2 id="org5c9a7f6"><span class="section-number-2">6.</span> Expanding Maps</h2>
+<div id="outline-container-org2f04d27" class="outline-2">
+<h2 id="org2f04d27"><span class="section-number-2">6.</span> Expanding Maps</h2>
 <div class="outline-text-2" id="text-6">
 <p>
 Let \(E_2(x) = 2x \text{ mod} 1\) be the angle doubling map on the circle.
@@ -469,7 +469,7 @@ a dense orbit.
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-03-28 Thu 22:10</p>
+<p class="date">Created: 2024-03-28 Thu 22:14</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
