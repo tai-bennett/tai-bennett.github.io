@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-03-29 Fri 22:24 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Pontryagin Maximum Principle</title>
+<meta name="author" content="Duncan Bennett" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Pontryagin Maximum Principle</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orgb8f24eb">1. The Pontryagin Maximum Principle</a>
+<ul>
+<li><a href="#org35ff864">1.1. Hamiltoian Function</a></li>
+<li><a href="#orgeddb7e9">1.2. Costate Equatino</a></li>
+<li><a href="#org264dec2">1.3. Optimality Condition</a></li>
+<li><a href="#org8fcee2f">1.4. Transversality Condition</a></li>
+</ul>
+</li>
+<li><a href="#orgbb4a02e">2. Proof the conditions are necessary</a>
+<ul>
+<li><a href="#org1d2e1bc">2.1. Setup the Augmented Performance Criterion</a></li>
+<li><a href="#org06862d4">2.2. Variations and the Hamiltonian</a></li>
+<li><a href="#orgd8b9837">2.3. Derive Necessary Conditions</a></li>
+<li><a href="#org3bf4cfe">2.4. Transversality Conditions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+The following is made in part with chat gpt-4.
+</p>
+<div id="outline-container-orgb8f24eb" class="outline-2">
+<h2 id="orgb8f24eb"><span class="section-number-2">1.</span> The Pontryagin Maximum Principle</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+The Pontryagin Maximum Principle (PMP) is a foundational result in the
+field of optimal control theory. It provides necessary conditions that
+an optimal control must satisfy. The principle is particularly useful
+when dealing with control problems where the objective is to optimize
+some performance criterion, which might be to minimize time, energy,
+or some other cost associated with the control process. Let's derive
+the Pontryagin Maximum Principle for a basic control problem.
+</p>
+
+<p>
+Consider a control system described by the differential equation:
+</p>
+
+\begin{align*}
+\dot{x}(t) &= f(x(t), u(t), t)
+\end{align*}
+<p>
+where
+</p>
+\begin{align*}
+x(t) &\in \mathbb{R}^n \text{ is the state of the system at time } t.\\
+u(t) &\in U \subset \mathbb{R}^m \text{ is the control input at time } t.\\
+f: &\mathbb{R}^n \times U \times \mathbb{R} \to \mathbb{R}^n \text{ is a function describing the system dynamics}\\
+U &\text{ is the set of all admissable controls}
+\end{align*}
+
+<p>
+The objective is to find a control \(u(t)\) that optimizes a given performance criterion,
+typically in the form of an integral
+</p>
+\begin{align*}
+J(u) &= \int_{t_0}^{t_f} L(x(t), u(t), t) dt
+\end{align*}
+<p>
+where
+</p>
+\begin{itemize}
+\item $J(u)$ is the performance criterion to be minimized (or maximized)
+\item $L: \mathbb{R}^n \times U \times \mathbb{R} \to \mathbb{R}$ is the running
+cost (or benefit) associated with the state $x(t)$ and control $u(t)$ at time
+$t$.
+\item $t_0$ and $t_f$ are the initial and final times, respectively.
+\end{itemize}
+</div>
+<div id="outline-container-org35ff864" class="outline-3">
+<h3 id="org35ff864"><span class="section-number-3">1.1.</span> Hamiltoian Function</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Define the Hamiltonian function \(H(x,u,\lambda,t)\) as
+</p>
+\begin{align*}
+H(x,u,\lambda,t) &= L(x,u,t) + \lambda^Tf(x,u,t)
+\end{align*}
+<p>
+where \(\lambda(t) \in \mathbb{R}^n\) is the costate (or adjoint) vector.
+</p>
+</div>
+</div>
+<div id="outline-container-orgeddb7e9" class="outline-3">
+<h3 id="orgeddb7e9"><span class="section-number-3">1.2.</span> Costate Equatino</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+The evolution of \(\lambda(t)\) is given by the costate equation
+</p>
+\begin{align*}
+\dot{\lambda}(t) &= - \frac{\partial H}{\partial x} = -\frac{\partial L}{\partial x} - \lambda^T \frac{\partial f}{\partial x}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org264dec2" class="outline-3">
+<h3 id="org264dec2"><span class="section-number-3">1.3.</span> Optimality Condition</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+The control \(u(t)\) must maximize (or minimize) the Hamiltonian \(H(x,u,\lambda t)\)
+for all \(t\), given \(x(t)\) and \(\lambda(t)\),
+</p>
+\begin{align*}
+u^*(t) & \text{argmax}_{u \in U} H(x,u,\lambda,t)
+\end{align*}
+<p>
+or equivalently
+</p>
+\begin{align*}
+\frac{\partial H}{\partial u} = 0 && \text{ and $H$ should be maximized (minimized) over $U$}
+\end{align*}
+</div>
+</div>
+<div id="outline-container-org8fcee2f" class="outline-3">
+<h3 id="org8fcee2f"><span class="section-number-3">1.4.</span> Transversality Condition</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+At the inital and final times, the state \(x(t)\) and costate \(\lambda(t)\) must
+satisfy certain boundary conditions, which depend on the specific problem.
+</p>
+
+<p>
+This  principle effectively transforms the optimal control into solving
+a two-point boundary value problem involving the system dynamics and the costate
+dynamics, along with applying the optimality condition to determine the control
+law.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbb4a02e" class="outline-2">
+<h2 id="orgbb4a02e"><span class="section-number-2">2.</span> Proof the conditions are necessary</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+To prove that the conditions given by the Pontryagin Maximum Principle (PMP) are necessary for optimality in a control problem, we'll use a simplified version of the argument based on variational analysis and the concept of the Hamiltonian. The proof sketches the fundamental reasoning behind the PMP without delving into the most technical aspects, which require a deeper background in functional analysis and variational calculus. Let's consider a control problem with the dynamics, objective, and notations previously defined.
+</p>
+</div>
+<div id="outline-container-org1d2e1bc" class="outline-3">
+<h3 id="org1d2e1bc"><span class="section-number-3">2.1.</span> Setup the Augmented Performance Criterion</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+First, we augment the performance criterion \(J(u)\) by incorporating the
+dynamics of the system directly into the cost function using a set
+of auxillary variables, \(\lambda(t)\), known as the costate of adjoint
+variables. This leads us to define an augmented objective function (the
+Lagrangian)
+</p>
+\begin{align*}
+\mathcal{L}(x,u,\lambda) &= \int_{t_0}^{t_f} \left [ L(x(t), u(t), t) + \lambda^T (\dot{x}(t) - f(x(t),u(t),t))\right ] dt
+\end{align*}
+</div>
+</div>
+
+<div id="outline-container-org06862d4" class="outline-3">
+<h3 id="org06862d4"><span class="section-number-3">2.2.</span> Variations and the Hamiltonian</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+The Hamiltonian \(H\) is defined as
+</p>
+\begin{align*}
+H(x,u,\lambda,t) &= L(x,u,t) + \lambda^T f(x,u,t)
+\end{align*}
+<p>
+Consider small variations \(\delta x(t), \delta u(t)\) and \(\delta \lambda(t)\)
+around an optimal trajectory \((x^*(t), u^*(t), \lambda^*(t))\). The principle
+of optimality implies the variation of \(\mathcal{L}\) due to these variations
+must be zero for the path to be optimal, leading to the first-order
+necessary condition for optimality
+</p>
+\begin{align*}
+\delta \mathcal{L} = 0.
+\end{align*}
+<p>
+This results in the derivation of the Euler-Lagrange equations for \(x(t)\) and
+\(\lambda(t)\), and the condition that the variation of \(H\) with respect to \(u(t)\)
+must be zero.
+</p>
+</div>
+</div>
+<div id="outline-container-orgd8b9837" class="outline-3">
+<h3 id="orgd8b9837"><span class="section-number-3">2.3.</span> Derive Necessary Conditions</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+From \(\delta \mathcal{L} = 0\) we derive
+</p>
+\begin{enumerate}
+\item State equation: The dynamics $\dot{x}(t) = f(x(t), u(t),t)$ must hold.
+\item Costate equation: Differentiating $H$ with respect to $x$ gives the costate dynamics
+\begin{align*}
+\dot{\lambda}(t) = - \frac{\partial H}{\partial x}.
+\end{align*}
+\item Optimality Condition: Differentiating $H$ with respect to $u$ and setting it to zero yields the condition for optimal control
+\begin{align*}
+0 = \frac{\partial H}{\partial u}
+\end{align*}
+This implies that for any given $t$, the choice of $u(t)$ must maximize (or minimize) the Hamiltonian $H$ given $x(t)$ and $\lambda(t)$.
+\end{enumerate}
+</div>
+</div>
+<div id="outline-container-org3bf4cfe" class="outline-3">
+<h3 id="org3bf4cfe"><span class="section-number-3">2.4.</span> Transversality Conditions</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+Finally, the variations at the endpoints \(t_0\)​ and \(t_f\)​ lead to boundary conditions for \(x(t)\) and \(\lambda(t)\), known as transversality conditions. These conditions depend on the specific problem setup, including whether the initial and final states are fixed or free.
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Duncan Bennett</p>
+<p class="date">Created: 2024-03-29 Fri 22:24</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
