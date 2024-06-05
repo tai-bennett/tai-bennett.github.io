@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-04 Tue 18:04 -->
+<!-- 2024-06-04 Tue 18:15 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fundamental Theorems of Ordinary Differential Equations</title>
@@ -222,11 +222,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#orge036952">1. Existence and uniqueness with the Lipschitz condition</a>
+<li><a href="#org7d24609">1. Existence and uniqueness with the Lipschitz condition</a>
 <ul>
-<li><a href="#org1947a82">1.1. Gronwall's Inequality</a></li>
-<li><a href="#org8b7320f">1.2. Successive Approximations of a solution</a></li>
-<li><a href="#org9a14603">1.3. Proof of FTODE version 1</a></li>
+<li><a href="#orgcbdcaf6">1.1. Gronwall's Inequality</a></li>
+<li><a href="#org198d5f0">1.2. Successive Approximations of a solution</a></li>
+<li><a href="#org098e7f4">1.3. Proof of FTODE version 1</a></li>
 </ul>
 </li>
 </ul>
@@ -243,27 +243,27 @@ which we label (P). We will present some fundamental theorems regarding solution
 (P) in cases such that \(f\) is Lipschitz on a rectangle, \(f\) is just continuous. Lastly,
 we discuss some results regarding the expansion of solutions.
 </p>
-<div id="outline-container-orge036952" class="outline-2">
-<h2 id="orge036952"><span class="section-number-2">1.</span> Existence and uniqueness with the Lipschitz condition</h2>
+<div id="outline-container-org7d24609" class="outline-2">
+<h2 id="org7d24609"><span class="section-number-2">1.</span> Existence and uniqueness with the Lipschitz condition</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \(| \cdot | = \max \{|x_i| : 1 \leq i \leq n\}\) be the sup-norm on \(\mathbb{R}^n\).
 We will prove the existence and uniqueness of solutions to (P) when \(f\) is Lipschitz continuous
 on a rectangle. We work with two main assumptions:
 </p>
-\begin{description}
-\item[Assumption 1] Each component function $f^{(i)}(t, \vec{y})$ of $\vec{f}$ is a real-valued,
+\begin{itemize}
+\item \textbf{Assumption 1} Each component function $f^{(i)}(t, \vec{y})$ of $\vec{f}$ is a real-valued,
 continuous function on a rectangular region:
 \begin{align*}
 \mathcal{R} = \mathcal{R}((t, \vec{c}_0), a, b) = \{(t, \vec{y}) : |t - t_0| \leq a, \ |\vec{y} - \vec{c}_0| \leq b\}.
 \end{align*}
 (note the use of the sup-norm) where $a,b$ are two positive numbers.
-\item[Assumption 2] The function $\vec{f}$ is Lipschitz with constant $L >0$. That is,
+\item \textbf{Assumption 2} The function $\vec{f}$ is Lipschitz with constant $L >0$. That is,
 \begin{align*}
 | \vec{f}(t, \vec{y}_1) - \vec{f}(t, \vec{y}_2) | \leq L |\vec{y}_1 - \vec{y}_2|
 \end{align*}
 where $(t,\vec{y}_j) \in \mathcal{R}$ for $j = 1,2$.
-\end{description}
+\end{itemize}
 
 <p>
 Then, we have the following theorem.<br />
@@ -282,8 +282,8 @@ successive approximations to the solution.
 </p>
 </div>
 
-<div id="outline-container-org1947a82" class="outline-3">
-<h3 id="org1947a82"><span class="section-number-3">1.1.</span> Gronwall's Inequality</h3>
+<div id="outline-container-orgcbdcaf6" class="outline-3">
+<h3 id="orgcbdcaf6"><span class="section-number-3">1.1.</span> Gronwall's Inequality</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 \noindent <b>Theorem (Gronwall's Inequality)</b> Let \(g(t)\) be a continuous function on \([t_0, t_1]\) such that
@@ -303,8 +303,8 @@ for \(t \in [t_0, t_1]\).<br />
 </div>
 </div>
 
-<div id="outline-container-org8b7320f" class="outline-3">
-<h3 id="org8b7320f"><span class="section-number-3">1.2.</span> Successive Approximations of a solution</h3>
+<div id="outline-container-org198d5f0" class="outline-3">
+<h3 id="org198d5f0"><span class="section-number-3">1.2.</span> Successive Approximations of a solution</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Since we are restricting our focus of \(\vec{f}\) on a compact domain, we can assume absolute continuity, meaning
@@ -331,8 +331,8 @@ In particular, we consider the sequence
 </div>
 </div>
 
-<div id="outline-container-org9a14603" class="outline-3">
-<h3 id="org9a14603"><span class="section-number-3">1.3.</span> Proof of FTODE version 1</h3>
+<div id="outline-container-org098e7f4" class="outline-3">
+<h3 id="org098e7f4"><span class="section-number-3">1.3.</span> Proof of FTODE version 1</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 testing
@@ -343,7 +343,7 @@ testing
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-06-04 Tue 18:04</p>
+<p class="date">Created: 2024-06-04 Tue 18:15</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
