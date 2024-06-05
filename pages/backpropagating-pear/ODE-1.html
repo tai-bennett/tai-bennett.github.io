@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-04 Tue 18:15 -->
+<!-- 2024-06-05 Wed 12:45 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fundamental Theorems of Ordinary Differential Equations</title>
@@ -222,11 +222,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7d24609">1. Existence and uniqueness with the Lipschitz condition</a>
+<li><a href="#org7d31cad">1. Existence and uniqueness with the Lipschitz condition</a>
 <ul>
-<li><a href="#orgcbdcaf6">1.1. Gronwall's Inequality</a></li>
-<li><a href="#org198d5f0">1.2. Successive Approximations of a solution</a></li>
-<li><a href="#org098e7f4">1.3. Proof of FTODE version 1</a></li>
+<li><a href="#orgb1db705">1.1. Gronwall's Inequality</a></li>
+<li><a href="#org9690caf">1.2. Successive Approximations of a solution</a></li>
+<li><a href="#orge4ebbbb">1.3. Proof of FTODE version 1</a></li>
+</ul>
+</li>
+<li><a href="#org4e37994">2. Existence without the Lipschitz condition</a>
+<ul>
+<li><a href="#org0dc909b">2.1. Arzela-Ascoli</a></li>
 </ul>
 </li>
 </ul>
@@ -243,34 +248,29 @@ which we label (P). We will present some fundamental theorems regarding solution
 (P) in cases such that \(f\) is Lipschitz on a rectangle, \(f\) is just continuous. Lastly,
 we discuss some results regarding the expansion of solutions.
 </p>
-<div id="outline-container-org7d24609" class="outline-2">
-<h2 id="org7d24609"><span class="section-number-2">1.</span> Existence and uniqueness with the Lipschitz condition</h2>
+<div id="outline-container-org7d31cad" class="outline-2">
+<h2 id="org7d31cad"><span class="section-number-2">1.</span> Existence and uniqueness with the Lipschitz condition</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \(| \cdot | = \max \{|x_i| : 1 \leq i \leq n\}\) be the sup-norm on \(\mathbb{R}^n\).
 We will prove the existence and uniqueness of solutions to (P) when \(f\) is Lipschitz continuous
 on a rectangle. We work with two main assumptions:
 </p>
-\begin{itemize}
-\item \textbf{Assumption 1} Each component function $f^{(i)}(t, \vec{y})$ of $\vec{f}$ is a real-valued,
-continuous function on a rectangular region:
-\begin{align*}
-\mathcal{R} = \mathcal{R}((t, \vec{c}_0), a, b) = \{(t, \vec{y}) : |t - t_0| \leq a, \ |\vec{y} - \vec{c}_0| \leq b\}.
-\end{align*}
-(note the use of the sup-norm) where $a,b$ are two positive numbers.
-\item \textbf{Assumption 2} The function $\vec{f}$ is Lipschitz with constant $L >0$. That is,
-\begin{align*}
-| \vec{f}(t, \vec{y}_1) - \vec{f}(t, \vec{y}_2) | \leq L |\vec{y}_1 - \vec{y}_2|
-\end{align*}
-where $(t,\vec{y}_j) \in \mathcal{R}$ for $j = 1,2$.
-\end{itemize}
+<ul class="org-ul">
+<li><b>Assumption 1</b> Each component function \(f^{(i)}(t, \vec{y})\) of \(\vec{f}\) is a real-valued, continuous function on a rectangular region:
+\[\mathcal{R} = \mathcal{R}((t, \vec{c}_0), a, b) = \{(t, \vec{y}) : |t - t_0| \leq a, \ |\vec{y} - \vec{c}_0| \leq b\}.\]
+(note the use of the sup-norm) where \(a,b\) are two positive numbers.</li>
+<li><b>Assumption 2</b> The function \(\vec{f}\) is Lipschitz with constant \(L >0\). That is,
+\[| \vec{f}(t, \vec{y}_1) - \vec{f}(t, \vec{y}_2) | \leq L |\vec{y}_1 - \vec{y}_2|\]
+where \((t,\vec{y}_j) \in \mathcal{R}\) for \(j = 1,2\).</li>
+</ul>
 
 <p>
 Then, we have the following theorem.<br />
 </p>
 
 <p>
-\noindent <b>Theorem (FTODE version 1)</b> Unders assumptions 1 and 2, there exists a unique solution of problem (P)
+<b>Theorem (FTODE version 1)</b> Unders assumptions 1 and 2, there exists a unique solution of problem (P)
 on the interval \(|t - t_0| < \alpha\) where \(\alpha = \min \{a,b/M\}\) and
 \(M = \max_{(t,\vec{y}) \in \mathcal{R}} | \vec{f}(t, \vec{y}) |\).
 </p>
@@ -282,11 +282,11 @@ successive approximations to the solution.
 </p>
 </div>
 
-<div id="outline-container-orgcbdcaf6" class="outline-3">
-<h3 id="orgcbdcaf6"><span class="section-number-3">1.1.</span> Gronwall's Inequality</h3>
+<div id="outline-container-orgb1db705" class="outline-3">
+<h3 id="orgb1db705"><span class="section-number-3">1.1.</span> Gronwall's Inequality</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
-\noindent <b>Theorem (Gronwall's Inequality)</b> Let \(g(t)\) be a continuous function on \([t_0, t_1]\) such that
+<b>Theorem (Gronwall's Inequality)</b> Let \(g(t)\) be a continuous function on \([t_0, t_1]\) such that
 </p>
 \begin{align}
 0 \leq g(t) \leq K + L \int_{t_0}^t g(s) ds \label{eqn:gronwall-cond}
@@ -300,11 +300,38 @@ for all \(t \in [t_0, t_1]\) then
 <p>
 for \(t \in [t_0, t_1]\).<br />
 </p>
+
+<p>
+<span class="underline"><i>Proof</i></span>.<br />
+</p>
+
+<p>
+Let \(v(t) = \int_{t_0}^t g(s) ds\) and substituting into (\ref{eqn:gronwall-cond}) we get
+that \(v'(t) \leq K + Lv(t)\) and \(v(t_0) = 0\). Then we can write
+</p>
+\begin{align*}
+-Lv(t) + v'(t) & \leq K\\
+\exp(-L(t-t_0))(-Lv(t) + v'(t)) & \leq K \exp(-L(t-t_0))\\
+-L \exp (-L (t-t_0)) v(t) + \exp(-L(t-t_0)) v'(t) & \leq K \exp(-L(t-t_0))\\
+\frac{d}{dt} \left ( \exp ( -L(t-t_0) ) v(t) \right ) &\leq K \exp (-L(t-t_0))\\
+\int_{t_0}^t \frac{d}{dt} \left ( \exp ( -L(s-t_0) ) v(s) \right ) ds &\leq \int_{t_0}^t K \exp (-L(s-t_0)) ds\\
+\exp ( -L(t-t_0) ) v(t) &\leq \frac{K}{L} \left ( 1 - \exp (-L(t-t_0)) \right )
+\end{align*}
+<p>
+Solving the above for \(Lv(t)\), we can conclude that
+\[ g(t) \leq K + Lv(t) \leq K \exp (L(t-t_0)). \]
+<br />
+</p>
+
+<p>
+\(\square\)
+</p>
 </div>
 </div>
 
-<div id="outline-container-org198d5f0" class="outline-3">
-<h3 id="org198d5f0"><span class="section-number-3">1.2.</span> Successive Approximations of a solution</h3>
+
+<div id="outline-container-org9690caf" class="outline-3">
+<h3 id="org9690caf"><span class="section-number-3">1.2.</span> Successive Approximations of a solution</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Since we are restricting our focus of \(\vec{f}\) on a compact domain, we can assume absolute continuity, meaning
@@ -331,11 +358,82 @@ In particular, we consider the sequence
 </div>
 </div>
 
-<div id="outline-container-org098e7f4" class="outline-3">
-<h3 id="org098e7f4"><span class="section-number-3">1.3.</span> Proof of FTODE version 1</h3>
+<div id="outline-container-orge4ebbbb" class="outline-3">
+<h3 id="orge4ebbbb"><span class="section-number-3">1.3.</span> Proof of FTODE version 1</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
-testing
+The core of the proof of this version of the fundamental theorem is that our sequence of approximations
+\(\{\vec{\phi}_k(t)\}\) converges (uniformly on \([t_0 - \alpha, t_0 + \alpha]\)) and then confirming that
+this limit function is a unique solution to (P). The uniqueness can be proved by applying Gronwall's
+inequality of the difference of two solutions.
+</p>
+
+<p>
+To show the convergence of \(\vec{\phi}_k(t) = \vec{\phi}_0(t) + \sum_{i = 1}^i (\vec{\phi}_i(t) - \vec{\phi}_{i-1}(t))\)
+can be shown in several small steps. First, by induction, one can show
+</p>
+\begin{align*}
+|\vec{\phi}_k(t) - \vec{\phi}_{k-1}(t)| \leq \frac{M L^{k-1}}{k!} |t - t_0|^{k+1}
+\end{align*}
+<p>
+where \(L\) is the Lipschitz constant of \(\vec{f}\). This can be used to show the uniform convergences
+of the series \(\sum_{k = 1}^{\infty} (\vec{\phi}_k(t) - \vec{\phi}_{k-1}(t))\) on \([t_0 - \alpha, t_0 + \alpha]\)
+which in turn shows the uniform convergence of \(\vec{\phi}_k(t)\) on the same domain. Denote the limit function by
+\(\vec{\phi} : [t_0 - \alpha, t_0 + \alpha] \to D\).
+</p>
+
+<p>
+The uniform convergence means we can pass the limit
+</p>
+\begin{align*}
+\vec{\phi}_k(t) &= \vec{c}_0 + \int_{t_0}^t \vec{f}(s, \vec{\phi}_{k-1}(t)) ds \\
+\lim_{k \to \infty} \vec{\phi}_k(t) &= \vec{c}_0 + \lim_{k \to \infty} \int_{t_0}^t \vec{f}(s, \vec{\phi}_{k-1}(t)) ds \\
+\lim_{k \to \infty} \vec{\phi}_k(t) &= \vec{c}_0 + \int_{t_0}^t \lim_{k \to \infty} \vec{f}(s, \vec{\phi}_{k-1}(t)) ds \\
+\vec{\phi}(t) &= \vec{c}_0 + \int_{t_0}^t \vec{f}(s, \vec{\phi}(t)) ds
+\end{align*}
+<p>
+which is clearly a solution to (P).
+</p>
+
+<p>
+To show uniqueness, suppose \(\vec{\psi}(t)\) is another solution on \([t_0 - \alpha', t_0 + \alpha']\) for \(\alpha' \leq \alpha\).
+Then applying Gronwall's inequality (with \(K = 0\)) to
+</p>
+\begin{align*}
+| \vec{\phi}(t) - \vec{\psi}(t) | = \left | \int_{t_0}^t \left ( \vec{f}(s, \vec{\phi}(s)) - \vec{f}(s, \vec{\psi}(s)) \right ) ds \right | \leq L \left | \int_{t_0}^t | \vec{\phi}(s) - \vec{\psi}(s) | ds \right | 
+\end{align*}
+<p>
+we get
+</p>
+\begin{align*}
+| \vec{\phi}(t) - \vec{\psi}(t) | \leq K \exp (L (t-t_0)) = 0
+\end{align*}
+<p>
+which confirms uniqueness.<br />
+</p>
+
+<p>
+\(\square\)
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4e37994" class="outline-2">
+<h2 id="org4e37994"><span class="section-number-2">2.</span> Existence without the Lipschitz condition</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+This proof depends on our ability to approximate continuous functions with smooth function
+which is a result of Arzela-Ascoli.
+</p>
+</div>
+<div id="outline-container-org0dc909b" class="outline-3">
+<h3 id="org0dc909b"><span class="section-number-3">2.1.</span> Arzela-Ascoli</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+<b>Theorem (Arzela-Ascoli)</b> On a bounded interval \(\mathcal{I}\), let \(\mathcal{F}\) be an
+infinite, bounded and equicontinous set of functions. Then \(\mathcal{F}\) contains an
+infinite sequence which is uniformly convergent on \(\mathcal{I}\).
 </p>
 </div>
 </div>
@@ -343,7 +441,7 @@ testing
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-06-04 Tue 18:15</p>
+<p class="date">Created: 2024-06-05 Wed 12:45</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
