@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2024-06-05 Wed 12:45 -->
+<!-- 2024-06-10 Mon 10:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Fundamental Theorems of Ordinary Differential Equations</title>
@@ -222,16 +222,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org7d31cad">1. Existence and uniqueness with the Lipschitz condition</a>
+<li><a href="#org2e026a9">1. Existence and uniqueness with the Lipschitz condition</a>
 <ul>
-<li><a href="#orgb1db705">1.1. Gronwall's Inequality</a></li>
-<li><a href="#org9690caf">1.2. Successive Approximations of a solution</a></li>
-<li><a href="#orge4ebbbb">1.3. Proof of FTODE version 1</a></li>
+<li><a href="#org46be19f">1.1. Gronwall's Inequality</a></li>
+<li><a href="#org4a80d9d">1.2. Successive Approximations of a solution</a></li>
+<li><a href="#org9b1dfbf">1.3. Proof of FTODE version 1</a></li>
 </ul>
 </li>
-<li><a href="#org4e37994">2. Existence without the Lipschitz condition</a>
+<li><a href="#orgd1d8525">2. Existence without the Lipschitz condition</a>
 <ul>
-<li><a href="#org0dc909b">2.1. Arzela-Ascoli</a></li>
+<li><a href="#orgfe2d072">2.1. Arzela-Ascoli</a></li>
+<li><a href="#org4080822">2.2. Approximating with smooth functions</a></li>
+<li><a href="#orgf6f3be4">2.3. Theorem</a></li>
 </ul>
 </li>
 </ul>
@@ -248,8 +250,8 @@ which we label (P). We will present some fundamental theorems regarding solution
 (P) in cases such that \(f\) is Lipschitz on a rectangle, \(f\) is just continuous. Lastly,
 we discuss some results regarding the expansion of solutions.
 </p>
-<div id="outline-container-org7d31cad" class="outline-2">
-<h2 id="org7d31cad"><span class="section-number-2">1.</span> Existence and uniqueness with the Lipschitz condition</h2>
+<div id="outline-container-org2e026a9" class="outline-2">
+<h2 id="org2e026a9"><span class="section-number-2">1.</span> Existence and uniqueness with the Lipschitz condition</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Let \(| \cdot | = \max \{|x_i| : 1 \leq i \leq n\}\) be the sup-norm on \(\mathbb{R}^n\).
@@ -282,8 +284,8 @@ successive approximations to the solution.
 </p>
 </div>
 
-<div id="outline-container-orgb1db705" class="outline-3">
-<h3 id="orgb1db705"><span class="section-number-3">1.1.</span> Gronwall's Inequality</h3>
+<div id="outline-container-org46be19f" class="outline-3">
+<h3 id="org46be19f"><span class="section-number-3">1.1.</span> Gronwall's Inequality</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 <b>Theorem (Gronwall's Inequality)</b> Let \(g(t)\) be a continuous function on \([t_0, t_1]\) such that
@@ -330,8 +332,8 @@ Solving the above for \(Lv(t)\), we can conclude that
 </div>
 
 
-<div id="outline-container-org9690caf" class="outline-3">
-<h3 id="org9690caf"><span class="section-number-3">1.2.</span> Successive Approximations of a solution</h3>
+<div id="outline-container-org4a80d9d" class="outline-3">
+<h3 id="org4a80d9d"><span class="section-number-3">1.2.</span> Successive Approximations of a solution</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 Since we are restricting our focus of \(\vec{f}\) on a compact domain, we can assume absolute continuity, meaning
@@ -339,7 +341,7 @@ that for solutions we must have the fundamental theorem of calculus. That is
 </p>
 \begin{align*}
 \vec{\phi}(t) - \vec{c}_0 &= \int_{t_0}^t \vec{\phi}'(s) ds\\
-&= \int_{t_0}^t \vec{f}(t, \phi(s)) ds.
+&= \int_{t_0}^t \vec{f}(s, \phi(s)) ds.
 \end{align*}
 <p>
 Meaning that solutions must be a fixed point of the mapping \(\vec{\psi}(t) \mapsto \vec{c}_0 + \int_{t_0}^t \vec{f}(t, \vec{\psi}(s)) ds\).
@@ -352,14 +354,14 @@ In particular, we consider the sequence
 \begin{align*}
 \begin{cases}
 \vec{\phi}_0(t) = \vec{c}_0 & \\
-\vec{\phi}_{k+1}(t) = \vec{c}_0 + \int_{t_0}^t \vec{f}(t, \vec{\phi}_{k}(s)) ds, & k = 0, 1, 2 \ldots.
+\vec{\phi}_{k+1}(t) = \vec{c}_0 + \int_{t_0}^t \vec{f}(s, \vec{\phi}_{k}(s)) ds, & k = 0, 1, 2 \ldots.
 \end{cases}
 \end{align*}
 </div>
 </div>
 
-<div id="outline-container-orge4ebbbb" class="outline-3">
-<h3 id="orge4ebbbb"><span class="section-number-3">1.3.</span> Proof of FTODE version 1</h3>
+<div id="outline-container-org9b1dfbf" class="outline-3">
+<h3 id="org9b1dfbf"><span class="section-number-3">1.3.</span> Proof of FTODE version 1</h3>
 <div class="outline-text-3" id="text-1-3">
 <p>
 The core of the proof of this version of the fundamental theorem is that our sequence of approximations
@@ -419,21 +421,140 @@ which confirms uniqueness.<br />
 </div>
 </div>
 
-<div id="outline-container-org4e37994" class="outline-2">
-<h2 id="org4e37994"><span class="section-number-2">2.</span> Existence without the Lipschitz condition</h2>
+<div id="outline-container-orgd1d8525" class="outline-2">
+<h2 id="orgd1d8525"><span class="section-number-2">2.</span> Existence without the Lipschitz condition</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 This proof depends on our ability to approximate continuous functions with smooth function
-which is a result of Arzela-Ascoli.
+which is a result of Arzela-Ascoli. The idea of the proof is to approximate \(\vec{f}\) with
+smooth functions \(\vec{F}_{\epsilon}\) (smooth implies Lipschitz) and thus have solutions
+\(\vec{\phi}_{\epsilon}(t)\) to the initial value problem. These approximations take place under
+the sup-norm. The solutions \(\{\vec{\phi}(t) : \epsilon > 0\}\) form a bounded, equicontinuous
+set which an be used to get our solution via Arzela-Ascoli.
 </p>
 </div>
-<div id="outline-container-org0dc909b" class="outline-3">
-<h3 id="org0dc909b"><span class="section-number-3">2.1.</span> Arzela-Ascoli</h3>
+<div id="outline-container-orgfe2d072" class="outline-3">
+<h3 id="orgfe2d072"><span class="section-number-3">2.1.</span> Arzela-Ascoli</h3>
 <div class="outline-text-3" id="text-2-1">
 <p>
 <b>Theorem (Arzela-Ascoli)</b> On a bounded interval \(\mathcal{I}\), let \(\mathcal{F}\) be an
 infinite, bounded and equicontinous set of functions. Then \(\mathcal{F}\) contains an
 infinite sequence which is uniformly convergent on \(\mathcal{I}\).
+</p>
+
+
+<p>
+<span class="underline"><i>Proof</i></span>.<br />
+</p>
+
+<p>
+Let \(\mathbb{Q} \cap \mathcal{I} =: \mathcal{Q} = \{r_j : j \in \mathbb{N}\}\). That is,
+the set \(\mathcal{Q}\) is the set of rational numbers in our interval and we enumerate them.
+</p>
+
+<p>
+We start by constructing a sequence that converges pointwise on \(\mathcal{Q}\). We can do this with
+a diagonalization argument. Let \(\mathcal{F}_1\) be a subsequence of \(\mathcal{F}\) such that \(f_{1,\ell}(r_1)\)
+converges to some \(c_1\) as \(\ell \to \infty\). Then inductively define \(\mathcal{F}_j\) as a subsequence of
+\(\mathcal{F}_{j-1}\) that converges at \(r_j\) to \(c_j\) (that is \(f_{j, \ell}(r_j) \to c_j\) as \(\ell \to \infty\)).
+Then the sequence \(f_{h,h}\) converges for all rational point in the interval. We can now upgrade this convergence
+on \(\mathcal{Q}\) to converges uniformly on \(\mathcal{I}\).
+</p>
+
+<p>
+Denote \(f_{h,h}\) by just \(f_h\). Using equicontinuity of \(f_h\) at a point \(r\) and pointwise convergence at \(r\)
+we can say
+</p>
+\begin{align*}
+|f_h(t) - f_h(r)| < \epsilon & \text{for } |t - r| < \delta(\epsilon)\\
+|f_h(r) - f_{\ell}(r)| < \epsilon & \text{for } h, \ell \geq N(r,\epsilon)\\
+|f_{\ell}(t) - f_{\ell}(r)| < \epsilon & \text{for } |t - r| < \delta(\epsilon)
+\end{align*}
+
+<p>
+The first and last conditions coming from equicontinuity and the second condition coming from pointwise convergence.
+Via triangle inequality we can bound \(|f_h(t) - f_{\ell}(t)|\). Then by equicontinuity, we can cover \(\mathcal{I}\)
+with \(\delta(\epsilon)\) balls and the above conditions will hold. By compactness, we can take a finite subcover where
+each ball is centered at some rational number. For each of these finite rational numbers, pick the largest \(N(r,\epsilon)\)
+and denote it \(N(\epsilon)\). Then for all \(h, \ell \geq N(\epsilon)\) we have that \(|f_{h}(t) - f_{\ell}(t)| < 3 \epsilon\)
+giving us uniform convergence on \(\mathcal{I}\).
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4080822" class="outline-3">
+<h3 id="org4080822"><span class="section-number-3">2.2.</span> Approximating with smooth functions</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+Next we approximate \(f\) with smooth functions (and thus Lipschitz). More precisely,<br />
+</p>
+
+<p>
+<b>Lemma:</b> Let \(\vec{f}(t,\vec{y})\) be continuous on a rectangle \(\mathcal{R}(a,b) = \mathcal{R}\).
+Then for every \(\epsilon > 0\) there exists \(\vec{F}_{\epsilon}(t,\vec{y})\) that is continuous on
+\(\mathcal{R}\), whose partial derivatives are all continuous on \(\mathcal{R}\) such that
+</p>
+<ul class="org-ul">
+<li>\(|\vec{F}_{\epsilon}(t,\vec{y})| \leq \max_{(\tau, \vec{\eta}) \in \mathcal{R}} |\vec{f}(\tau, \vec{\eta})|\) for \((t,\vec{y}) \in \mathcal{R}\)</li>
+<li>\(|\vec{F}_{\epsilon}(t,\vec{y}) - \vec{f}(t,\vec{y})| \leq \epsilon\) on \(\mathcal{R}\)</li>
+</ul>
+<p>
+That is, we \(\epsilon\)-approximate \(\vec{f}\) with a smooth function \(\vec{F}_{\epsilon}\) on the rectangle \(\mathcal{R}\).
+</p>
+
+<p>
+<span class="underline"><i>Proof</i></span>.<br />
+</p>
+
+<p>
+Here, we simply give a proof idea. Let \(\vec{F}(t,\vec{y})\) extend \(\vec{f}\) to the entire spatial domain.
+That is, \(\vec{F}\) is defined for <b>all</b> \(\vec{y}\) and
+</p>
+\begin{align*}
+\vec{F}(t,\vec{y}) =
+\begin{cases}
+\vec{f}(t,\vec{y}) & \text{ on } \mathcal{R} \\
+0 & \text{ on } |t - t_0| \leq a, \ |\vec{y} - \vec{c}_0| \geq b+1
+\end{cases}
+\end{align*}
+<p>
+This can be done using a partition of unity. Then let \(\Phi_{\delta}(\vec{y})\) be an approximation to the
+identity in \(\mathcal{L}^1(\mathbb{R}^n)\). Then define \(\vec{F}_{\epsilon}(t,\vec{y}) = \Phi_{\delta(\epsilon)}(\vec{y}) * \vec{F}(t, \vec{y})\).
+</p>
+</div>
+</div>
+<div id="outline-container-orgf6f3be4" class="outline-3">
+<h3 id="orgf6f3be4"><span class="section-number-3">2.3.</span> Theorem</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+<b>Theorem:</b> If \(\vec{f}(t, \vec{y})\) in continous on a region \(\mathcal{R} = \{(t, \vec{y}) : |t - t_0| \leq a, \ |\vec{y} - \vec{c}_0| \leq b\}\)
+and \(M = \max_{\mathcal{R}}|\vec{f}(t,\vec{y})|\), there exists a function \(\vec{\phi}(t)\) such that
+</p>
+<ul class="org-ul">
+<li>\(\vec{\phi}(t_0) = \vec{c}_0\)</li>
+<li>\(\vec{\phi}'(t) = \vec{f}(t,\vec{\phi}(t))\) on \(|t - t_0 | \leq \alpha\)</li>
+</ul>
+<p>
+where
+</p>
+\begin{align*}
+\alpha = 
+\begin{cases}
+a & \text{ if } M = 0,\\
+\min \{a, b/M\} & \text{ if } M > 0.
+\end{cases}
+\end{align*}
+
+<p>
+<span class="underline"><i>Proof</i></span>.<br />
+</p>
+
+<p>
+Again, we mostly give a proof outline here. Let \(\vec{\phi}_{\epsilon}(t)\) be solutions to the smooth approximations \(\vec{F}_{\epsilon}\).
+The collection \(\mathcal{F} = \{\vec{\phi}_{\epsilon}(t) : \epsilon > 0\}\) is a bounded and equicontinuous set on \(|t - t_0| \leq \alpha\).
+This follows from the fact that \(|\vec{F}_{\epsilon}(t \vec{\phi}_{\epsilon})| \leq M\). Via Arzela-Ascoli we can get a subsequence \(\epsilon_{\ell} \to 0\)
+such that \(\vec{\phi}_{\epsilon_{\ell}}(t)\) converges uniformly on \(|t - t_0| \leq \alpha\) to some \(\vec{\phi}(t)\). It can be checked that this is
+indeed a solution to the ODE with \(\vec{f}\). 
 </p>
 </div>
 </div>
@@ -441,7 +562,7 @@ infinite sequence which is uniformly convergent on \(\mathcal{I}\).
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2024-06-05 Wed 12:45</p>
+<p class="date">Created: 2024-06-10 Mon 10:16</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
