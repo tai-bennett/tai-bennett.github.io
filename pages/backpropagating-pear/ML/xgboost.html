@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-24 Thu 13:30 -->
+<!-- 2025-04-24 Thu 13:40 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>XGBoost</title>
@@ -222,7 +222,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org0ffa5ba">1. Motivation</a></li>
+<li><a href="#orga0b1b0d">1. Motivation</a></li>
 </ul>
 </div>
 </div>
@@ -230,8 +230,8 @@
 XGBoost in an ensemble model that is very flexible, popular and successful. In this post, we'll introduce the model and give its motivation. Then we'll do a small example.
 </p>
 
-<div id="outline-container-org0ffa5ba" class="outline-2">
-<h2 id="org0ffa5ba"><span class="section-number-2">1.</span> Motivation</h2>
+<div id="outline-container-orga0b1b0d" class="outline-2">
+<h2 id="orga0b1b0d"><span class="section-number-2">1.</span> Motivation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We first return to the core problem in machine learning. Given data \(X\), a family of models \(f_{\theta}\) and a loss function \(L(X,\theta)\) we wish to solve
@@ -259,14 +259,19 @@ Instead of using this update directly, we'll approximate it with another model
 f_{n+1} &= f_n - \alpha \hat{\phi}_{n+1}
 \end{align*}
 <p>
-where \(\hat{\phi}_{n+1}\) learns the difference between \(f_n\) and the true data/outputs. In the end, \(f_{N}\) will be a sum of models.
+where \(\hat{\phi}_{n+1}\) learns the difference between \(f_n\) and the true data/outputs. In the end, \(f_{N}\) will be a sum of models. In particular,
 </p>
+\begin{align*}
+\hat{\phi}_{n+1} &= \text{argmin} \sum_{i = 1}^N \frac{1}{2} \hat{h}_{n+1}(x_i) \left [\phi(x_i) - \frac{\hat{g}_{n+1}(x_i)}{\hat{h}_{n+1}(x_i)} \right ]^2\\
+\hat{g}_{n+1}(x_i) &= \frac{\partial L(y_i, f_n(x_i))}{\partial f_n(x_i)}\\
+\hat{h}_{n+1}(x_i) &= \frac{\partial^2 L(y_i, f_n(x_i))}{\partial f_n(x_i)^2}
+\end{align*}
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2025-04-24 Thu 13:30</p>
+<p class="date">Created: 2025-04-24 Thu 13:40</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
