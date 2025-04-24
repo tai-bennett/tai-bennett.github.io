@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-24 Thu 13:08 -->
+<!-- 2025-04-24 Thu 13:30 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>XGBoost</title>
@@ -222,7 +222,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org1993b01">1. Motivation</a></li>
+<li><a href="#org0ffa5ba">1. Motivation</a></li>
 </ul>
 </div>
 </div>
@@ -230,24 +230,43 @@
 XGBoost in an ensemble model that is very flexible, popular and successful. In this post, we'll introduce the model and give its motivation. Then we'll do a small example.
 </p>
 
-<div id="outline-container-org1993b01" class="outline-2">
-<h2 id="org1993b01"><span class="section-number-2">1.</span> Motivation</h2>
+<div id="outline-container-org0ffa5ba" class="outline-2">
+<h2 id="org0ffa5ba"><span class="section-number-2">1.</span> Motivation</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 We first return to the core problem in machine learning. Given data \(X\), a family of models \(f_{\theta}\) and a loss function \(L(X,\theta)\) we wish to solve
 </p>
 \begin{align*}
-\theta_* &= \argmin_{\theta} L(X, \theta).
+f_{\theta_*} &= \text{argmin}_{f_{\theta}} L(X, f_{\theta}).
 \end{align*}
 <p>
 And the most popular way to solve this optimization problem is via gradient descent. But we can also find minima using Newton-Raphson.
+The update rule for Newton-Raphsonn is
+</p>
+\begin{align*}
+x_{n+1} &= x_n - \alpha \frac{g(x_n)}{g'(x_n)}
+\end{align*}
+<p>
+where \(g\) is a function we are trying to find a zero of. This Newton-Raphson update is a step towards a root. In context, that is
+</p>
+\begin{align*}
+f_{n+1} &= f_n - \alpha \frac{L'(X,f_n)}{L''(X,f_n)}
+\end{align*}
+<p>
+Instead of using this update directly, we'll approximate it with another model
+</p>
+\begin{align*}
+f_{n+1} &= f_n - \alpha \hat{\phi}_{n+1}
+\end{align*}
+<p>
+where \(\hat{\phi}_{n+1}\) learns the difference between \(f_n\) and the true data/outputs. In the end, \(f_{N}\) will be a sum of models.
 </p>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2025-04-24 Thu 13:08</p>
+<p class="date">Created: 2025-04-24 Thu 13:30</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
