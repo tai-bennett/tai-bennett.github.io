@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2025-04-24 Thu 16:02 -->
+<!-- 2025-04-24 Thu 15:56 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Backpropagating Pear</title>
+<title>About Me</title>
 <meta name="author" content="Duncan Bennett" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -212,36 +212,21 @@
     <header class='header'>
       <nav class='navbar'>
         <a href='../../index.html' class='home'>Home</a>
-	<a href='./home.html'>Blog Home</a>
-	<a href='./archive.html'>Archive</a>
+	[main 62ce598] fix about page header
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+<a href='./backpropagating-pear/home.html'>Blog Home</a>
       </nav>
 </div>
 </div>
 <div id="content" class="content">
-<h1 class="title">Backpropagating Pear
-<br />
-<span class="subtitle">A Mathematics and Machine Learning Blog</span>
-</h1>
+<h1 class="title">About Me</h1>
 <p>
-Welcome to the blog! You can view the archive of all blog posts <a href="./blog.html">here</a>.
+My name is Duncan Bennett, I am a PhD student in the Mathematics department at the University of Arizona. I study machine learning and dynamical system. My thesis addresses the existence of rank-one strange attractors in the Long Short-Term Memory model and gives computer-assisted proofs of this chaos in the form of absolutely continuous invariant measures.
 </p>
-
-<p>
-<b>Recent Posts</b>
-</p>
-<ul class="org-ul">
-<li><a href="./ML/xgboost.html">XGBoost</a></li>
-</ul>
-<p>
-<b>Select Posts</b>
-</p>
-<ul class="org-ul">
-<li><a href="./ML/xgboost.html">XGBoost</a></li>
-</ul>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2025-04-24 Thu 16:02</p>
+<p class="date">Created: 2025-04-24 Thu 15:56</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
