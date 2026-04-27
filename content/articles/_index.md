@@ -51,7 +51,7 @@ Dylan Laplace Mermoud, Michel Grabich, Peter Sudhölter<br>
 
 <span style="color: #008080">*Scaling QAOA: transferring optimal adiabatic schedules from small-scale to large-scale variational circuits*</span><br>
 Ugo Nzongani, Dylan Laplace Mermoud, Arthur Braida<br> 
-[*2026 IEEE Conference on Quantum Control, Computing and Learning*](https://www.ieeeqccl2026.com/program) &bull; 2026 &bull; 6 pages &bull; [arXiv.2602.14986](https://arxiv.org/abs/2602.14986)<br>
+[*2026 International Conference on Quantum Control, Computing and Learning (qCCL)*](https://www.ieeeqccl2026.com/program) &bull; 2026 &bull; 6 pages &bull; [arXiv.2602.14986](https://arxiv.org/abs/2602.14986)<br>
 
 <span style="color: #008080">*Combinatorics on Social Configurations*</span><br>
 Dylan Laplace Mermoud, Pierre Popoli<br>
