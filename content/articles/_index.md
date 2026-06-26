@@ -11,19 +11,15 @@ My work belongs to three overlapping fields: quantum information and algorithms,
 ## Areas of interest
 
 Currently, I am working on 
-- quantum walks and algorithms for optimization, 
-- binary high-order polynomial optimization, 
-- interaction between high performance computing and quantum algorithms, 
-- the combinatorial structure and geometry of set functions and balanced collections, 
-- the algebraic structures of polymatroids and the permutohedral variety, 
-- continuous-time dynamical systems on combinatorial structures.
+- algebraic and combinatorial structures in game theory and decision theory, 
+- quantum algorithms for algebraic problems. 
 
 
 ## Supervision
 
-- [Paul-Henri Djoko](https://www.linkedin.com/in/paul-henri-djoko-abb604207/) (2026), Master 1 student, on reinforcement learning in game theory.
-- [Bruno Galibert](https://www.linkedin.com/in/bruno-galibert/) (2025), Master 1 student, on "Quantum circuit simplification", funded by a Quantum-Saclay grant.
-- [Qui Loc Phan](https://locphan2001.github.io) (2024), Master 1 student, on "Quantum circuit design and combinatorial optimization". 
+[Paul-Henri Djoko](https://www.linkedin.com/in/paul-henri-djoko-abb604207/) (2026), Master 1, on reinforcement learning in game theory.<br>
+[Bruno Galibert](https://www.linkedin.com/in/bruno-galibert/) (2025), Master 1, on quantum circuit simplification.<br>
+[Qui Loc Phan](https://locphan2001.github.io) (2024), Master 1, on quantum circuit design and combinatorial optimization. 
 
 
 ## Publications, proceedings & preprints

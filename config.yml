@@ -52,7 +52,7 @@ params:
     profileMode:
           enabled: true
           title: Dylan Laplace Mermoud
-          subtitle: "I am a postdoctoral researcher at the applied mathematics department of ENSTA from the Institut Polytechnique de Paris. I am also affiliated with the combinatorial optimization team in the CEDRIC lab at the Conservatoire National des Arts et Métiers. I work with Andrea Simonetto, and Sourour Elloumi. My research focuses on quantum algorithms for optimization problems, algebraic combinatorics and cooperative game theory."
+          subtitle: "I am a postdoctoral researcher at the applied mathematics department of ENSTA from the Institut Polytechnique de Paris. I am also affiliated with the combinatorial optimization team in the CEDRIC lab at the Conservatoire National des Arts et Métiers. I work with Andrea Simonetto, and Sourour Elloumi. My research focuses on quantum algorithms for optimization problems, algebraic combinatorics and cooperative game theory.<br><br>In September 2026, I will join the LIP6 at Sorbonne Université as an assistant professor, in the Décision team."
           imageUrl: "photo.png"
           imageWidth: 160
           imageHeight: 160
