@@ -21,6 +21,7 @@ Currently, I am working on
 
 ## Supervision
 
+- [Paul-Henri Djoko](https://www.linkedin.com/in/paul-henri-djoko-abb604207/) (2026), Master 1 student, on reinforcement learning in game theory.
 - [Bruno Galibert](https://www.linkedin.com/in/bruno-galibert/) (2025), Master 1 student, on "Quantum circuit simplification", funded by a Quantum-Saclay grant.
 - [Qui Loc Phan](https://locphan2001.github.io) (2024), Master 1 student, on "Quantum circuit design and combinatorial optimization". 
 
