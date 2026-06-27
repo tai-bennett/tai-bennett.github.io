@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-06-27 Sat 16:11 -->
+<!-- 2026-06-27 Sat 16:55 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Duncan Tai Bennett</title>
+<title>Computer-Assisted Proof of Chaos in LSTMs</title>
 <meta name="author" content="Duncan Bennett" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -193,7 +193,28 @@
     { background-color: #ffff00; color: #000000; font-weight: bold; }
   .org-svg { }
 </style>
-<link rel="stylesheet" type="text/css" href="style.css"/>
+<link rel="stylesheet" type="text/css" href="../../style.css"/>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
 </head>
 <body>
 <div id="preamble" class="status">
@@ -201,47 +222,79 @@
     <!--Nav Bar-->
     <header class='header'>
       <nav class='navbar'>
-        <a href='./index.html' class='home'>Home</a>
-        <a> // </a>
-	<a href='./pages/about.html'>About Me</a>
-        <a> // </a>
-	<a href='./assets/files/resume.pdf'>Resume</a>
-        <a> // </a>
-	<a href='./pages/backpropagating-pear/home.html'>Blog</a>
+        <a href='../../index.html' class='home'>Home</a>
+	<a href='home.html'>Blog Home</a>
       </nav>
 </div>
 </div>
 <div id="content" class="content">
-<h1 class="title">Duncan Tai Bennett</h1>
-<ul class="org-ul">
-<li><p>
-<a href="./pages/about.html">About Me</a>
+<h1 class="title">Computer-Assisted Proof of Chaos in LSTMs</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge99970e">1. Preliminaries</a>
+<ul>
+<li><a href="#org9c5811e">1.1. LSTM</a></li>
+<li><a href="#org043f64a">1.2. Chaos</a></li>
+<li><a href="#org49ac48c">1.3. Interval Arithmetic</a></li>
+</ul>
+</li>
+<li><a href="#org912d6f5">2. Rank One Strange Attractors</a></li>
+<li><a href="#org6e38afb">3. Misiurewicz Maps</a></li>
+<li><a href="#orgb7f6e29">4. Theorem Statment</a></li>
+</ul>
+</div>
+</div>
+<p>
+<b>This post is a work in progress.</b>
 </p>
 
 <p>
-I am a recent PhD Mathematics graduate from the University of Arizona specializing in machine learning and dynamical systems. I was advised by <a href="https://alamos.math.arizona.edu/">Dr Marek Rychlik</a> and my dissertation is title <i>Computer-Assisted Proofs of Chaos in the Long Short-Term Memory Model</i>. My current work involves industry ready data science leveraging causal inference, time-series modeling and deep learning. I also enjoy studying computer vision, graph neural networks and machine learning applied to the medicine.
-</p></li>
-<li>Education
-<ul class="org-ul">
-<li><b>PhD, Mathematics</b> - University of Arizona 2019 - 2025</li>
-<li><b>MS, Mathematics</b> - Western Washington University 2016 - 2018</li>
-<li><b>BS, Mathematics</b> - University of Puget Sound 2011 - 2015</li>
-</ul></li>
-<li>Recent Projects
-<ul class="org-ul">
-<li>Productionized Uplift Modeling for Marketing Campaigns</li>
-</ul></li>
-<li><a href="./pages/backpropagating-pear/home.html">Recent Blog Posts</a>
-<ul class="org-ul">
-<li>An Introduction to Doubly Robust Learning for Causal Inference (paper summary)</li>
-<li>Preparation for Data Science Interview: Random Forests</li>
-</ul></li>
-<li><a href="./assets/files/resume.pdf">Current Resume (PDF)</a></li>
-</ul>
+This post offers a quick overview of my dissertation work on computer-assisted proofs of chaos in machine learning models. If you are here, I assume you have some background in math and machine learning.
+</p>
+<div id="outline-container-orge99970e" class="outline-2">
+<h2 id="orge99970e"><span class="section-number-2">1.</span> Preliminaries</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+This work combines three distinct areas of mathematics: machine learning, dynamical systems and the study of chaos, and computer assisted proofs via rigorous computation.
+</p>
+</div>
+<div id="outline-container-org9c5811e" class="outline-3">
+<h3 id="org9c5811e"><span class="section-number-3">1.1.</span> LSTM</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+The Long Short-Term Memory model (LSTM) was developed to mitigate the <a href="https://en.wikipedia.org/wiki/Vanishing_gradient_problem">vanishing gradient problem</a>. This occurs when using recurrent neural networks (RNN), which infer using a long composition of the same function. Via the chain rule, this long composition can have derivatives tend to zero in absolute value resulting in underflow in computation. The result is that an RNN will fail to learn long range patterns. To see this, consider \(f(x_t, h_{t-1}) = h_t\) where \(x\) is an input sequence and \(h\) is a hidden state. Then
+\[\dfrac{\partial h_n}{\partial x_1} = \dfrac{\partial h_1}{x_1} \prod_{i = 1}^{n-1} \dfrac{\partial h_{i+1}}{\partial h_{i}}\]
+Thus, this large product and vanish (or explode) and the dependencies of the \(n^{\text{th}}\) hidden state won't depend on the initial input.
+</p>
+</div>
+</div>
+<div id="outline-container-org043f64a" class="outline-3">
+<h3 id="org043f64a"><span class="section-number-3">1.2.</span> Chaos</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+For a family of dynamical system \(f_{\theta}: X \to X\), with parameter \(\theta\) we are interested in the limit behavior of the system. We may be interested in the set \(\Omega(x_0) = \limsup_{n \to \infty} \{x \in X : x = f_{\theta}^n(x_0), n \in \mathbb{N}\}\), the omega limit set. This could be a single point or something more interesting. We could also be interested in what happens to these sets as \(\theta\) changes. 
+</p>
+</div>
+</div>
+<div id="outline-container-org49ac48c" class="outline-3">
+<h3 id="org49ac48c"><span class="section-number-3">1.3.</span> Interval Arithmetic</h3>
+</div>
+</div>
+<div id="outline-container-org912d6f5" class="outline-2">
+<h2 id="org912d6f5"><span class="section-number-2">2.</span> Rank One Strange Attractors</h2>
+</div>
+<div id="outline-container-org6e38afb" class="outline-2">
+<h2 id="org6e38afb"><span class="section-number-2">3.</span> Misiurewicz Maps</h2>
+</div>
+<div id="outline-container-orgb7f6e29" class="outline-2">
+<h2 id="orgb7f6e29"><span class="section-number-2">4.</span> Theorem Statment</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2026-06-27 Sat 16:11</p>
+<p class="date">Created: 2026-06-27 Sat 16:55</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
