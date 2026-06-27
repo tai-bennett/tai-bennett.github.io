@@ -1,9 +1,27 @@
 /* styles.css */
 
+:root {
+    --header-bg: url('images/header.png');
+    --site-bg: url("images/flowertile.png");
+    --accent-color: #f55cc0;
+    --select-color: #ffc1e9;
+    --link-color: #5083C1;
+    --bg-color: #CEEAFF;
+    --bg-color2: white;
+    --text-color: #191919;
+    --border-color: #215697;
+    /*--gradient-bg: linear-gradient(0deg, #CADCFF00 0%, #fff 100%);*/
+    --post-header-color: white;
+    --post-shadow-color: #21569760;
+    --outline-color: #191919;
+    --outline-color2: #191919;
+}
+
 body {
-  color: black;
-  // background-color: #f7ddb5;
+  color: var(--text-volor);
+  background-color: var(--bg-color);
   line-height: 25px; // a pixel value, for example
+  font-size: 14px;
 }
 
 em {
@@ -21,3 +39,8 @@ align-items: center;
 z-index: 20;
 }
 
+h1 {
+    padding: 20px 20px;
+    font-size: 2.25em;
+    color: var(--text-color);
+}
