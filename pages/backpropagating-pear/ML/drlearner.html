@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2026-06-28 Sun 14:33 -->
+<!-- 2026-06-28 Sun 14:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Doubly Robust Learners</title>
@@ -201,9 +201,11 @@
     <!--Nav Bar-->
     <header class='header'>
       <nav class='navbar'>
-        <a href='../index.html' class='home'>Home</a>
+        <a href='./index.html' class='home'>Home</a>
         <a> // </a>
-	<a href='./backpropagating-pear.html'>Blog Home</a>
+	<a href='./pages/backpropagating-pear.html'>Blog</a>
+        <a> // </a>
+        <a href='./pages/portfolio.html'>Portfolio</a>
       </nav>
 </div>
 </div>
@@ -216,18 +218,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org9fd77cc">Motivation</a></li>
-<li><a href="#org2fcf8c6">Background</a></li>
-<li><a href="#orgbd80458">Doubly Robust Learners</a></li>
-<li><a href="#org65edce1">Example</a></li>
-<li><a href="#orgd83a626">Recap</a>
-<ul>
-<li><a href="#org76547a0">Assumptions</a></li>
-<li><a href="#orgbd0d5cb">Recipe</a></li>
-<li><a href="#orga116139">Use Case</a></li>
-<li><a href="#org1e08631">Advantages and Limitations</a></li>
-</ul>
-</li>
+<li><a href="#orgd08a3bf">Motivation</a></li>
+<li><a href="#org856d526">Background</a></li>
+<li><a href="#org439d262">Doubly Robust Learners</a></li>
+<li><a href="#org47982a8">Example</a></li>
+<li><a href="#org3c6d4b3">Recap</a></li>
 </ul>
 </div>
 </div>
@@ -236,30 +231,30 @@ Causal inference is an extremely useful area of mathematics that could be levera
 This post was inspired by this <a href="https://arxiv.org/html/2406.00853v1">paper</a> which was what I used to introduce this concept to colleagues and friends.
 </p>
 
-<div id="outline-container-org9fd77cc" class="outline-2">
-<h2 id="org9fd77cc">Motivation</h2>
-<div class="outline-text-2" id="text-org9fd77cc">
+<div id="outline-container-orgd08a3bf" class="outline-2">
+<h2 id="orgd08a3bf">Motivation</h2>
+<div class="outline-text-2" id="text-orgd08a3bf">
 <p>
 Consider a company deciding how to use their marketing funds. They need to choose who to send promotions to, how much and analyze the risk of said campaigns. If one is using predictive modeling, we may create a model that predicts the probability one would buy &#x2026;
 </p>
 </div>
 </div>
-<div id="outline-container-org2fcf8c6" class="outline-2">
-<h2 id="org2fcf8c6">Background</h2>
+<div id="outline-container-org856d526" class="outline-2">
+<h2 id="org856d526">Background</h2>
 </div>
-<div id="outline-container-orgbd80458" class="outline-2">
-<h2 id="orgbd80458">Doubly Robust Learners</h2>
+<div id="outline-container-org439d262" class="outline-2">
+<h2 id="org439d262">Doubly Robust Learners</h2>
 </div>
-<div id="outline-container-org65edce1" class="outline-2">
-<h2 id="org65edce1">Example</h2>
+<div id="outline-container-org47982a8" class="outline-2">
+<h2 id="org47982a8">Example</h2>
 </div>
-<div id="outline-container-orgd83a626" class="outline-2">
-<h2 id="orgd83a626">Recap</h2>
-<div class="outline-text-2" id="text-orgd83a626">
+<div id="outline-container-org3c6d4b3" class="outline-2">
+<h2 id="org3c6d4b3">Recap</h2>
+<div class="outline-text-2" id="text-org3c6d4b3">
 </div>
-<div id="outline-container-org76547a0" class="outline-3">
-<h3 id="org76547a0">Assumptions</h3>
-<div class="outline-text-3" id="text-org76547a0">
+<div id="outline-container-org79ba85b" class="outline-3">
+<h3 id="org79ba85b">Assumptions</h3>
+<div class="outline-text-3" id="text-org79ba85b">
 <ul class="org-ul">
 <li>SUTVA</li>
 <li>Ignorability</li>
@@ -267,9 +262,9 @@ Consider a company deciding how to use their marketing funds. They need to choos
 </ul>
 </div>
 </div>
-<div id="outline-container-orgbd0d5cb" class="outline-3">
-<h3 id="orgbd0d5cb">Recipe</h3>
-<div class="outline-text-3" id="text-orgbd0d5cb">
+<div id="outline-container-orgf798216" class="outline-3">
+<h3 id="orgf798216">Recipe</h3>
+<div class="outline-text-3" id="text-orgf798216">
 <ul class="org-ul">
 <li>Outcome model</li>
 <li>Propensity model</li>
@@ -277,17 +272,17 @@ Consider a company deciding how to use their marketing funds. They need to choos
 </ul>
 </div>
 </div>
-<div id="outline-container-orga116139" class="outline-3">
-<h3 id="orga116139">Use Case</h3>
-<div class="outline-text-3" id="text-orga116139">
+<div id="outline-container-orga0772f0" class="outline-3">
+<h3 id="orga0772f0">Use Case</h3>
+<div class="outline-text-3" id="text-orga0772f0">
 <ul class="org-ul">
 <li>The outcome and propensity models can compensate for eachother.</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-org1e08631" class="outline-3">
-<h3 id="org1e08631">Advantages and Limitations</h3>
-<div class="outline-text-3" id="text-org1e08631">
+<div id="outline-container-orgd7848e3" class="outline-3">
+<h3 id="orgd7848e3">Advantages and Limitations</h3>
+<div class="outline-text-3" id="text-orgd7848e3">
 <ul class="org-ul">
 <li>Flexible</li>
 </ul>
@@ -297,7 +292,7 @@ Consider a company deciding how to use their marketing funds. They need to choos
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: Duncan Bennett</p>
-<p class="date">Created: 2026-06-28 Sun 14:33</p>
+<p class="date">Created: 2026-06-28 Sun 14:47</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
