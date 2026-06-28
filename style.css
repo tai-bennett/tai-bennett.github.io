@@ -15,13 +15,14 @@
     --post-shadow-color: #21569760;
     --outline-color: #191919;
     --outline-color2: #191919;
+    --body-font-size: 22px;
 }
 
 body {
   color: var(--text-volor);
   background-color: var(--bg-color);
   line-height: 25px; // a pixel value, for example
-  font-size: 14px;
+  font-size: var(--body-font-size);
 }
 
 em {
