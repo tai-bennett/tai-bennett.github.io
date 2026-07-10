@@ -11,14 +11,14 @@ taxonomies:
 
 menu:
     main:
-        - name: Research
-          url: articles/
+        - name: Porfolio
+          url: portfolio/
           weight: 1
         # - name: Talks
         #   url: talks/
         #   weight: 2
-        - name: Teaching
-          url: teaching/
+        - name: About
+          url: about/
           weight: 3 
         - name: Resume
           url: cv_laplace_mermoud.pdf
@@ -58,14 +58,14 @@ params:
           imageHeight: 160
           imageTitle: Dylan Laplace Mermoud
           buttons:
-            - name: Research
-              url: articles/
+            - name: Portfolio
+              url: portfolio/
             # - name: Talks
             #   url: talks/
-            - name: Enseignement
-              url: teaching/
+            - name: About
+              url: about/
             - name: Resume
-              url: cv_laplace_mermoud.pdf
+              url: dtb-resume.pdf
             # - name: Archive
             #   url: archive/
     socialIcons:
