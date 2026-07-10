@@ -1,5 +1,5 @@
 baseURL: "https://tai-bennett.github.io" 
-title: Dylan Laplace Mermoud
+title: Duncan Tai Bennett
 paginate: 20
 theme: PaperMod
 
@@ -21,14 +21,14 @@ menu:
           url: about/
           weight: 3 
         - name: Resume
-          url: cv_laplace_mermoud.pdf
+          url: dtb-resume.pdf
         # - name: Newsletter
         #   url: https://pmichaillat.substack.com
         #   weight: 4
 
 params:
     description: "I am a postdoctoral researcher in quantum algorithms at ENSTA - Institut Polytechnique de Paris."
-    author: Dylan Laplace Mermoud
+    author: Duncan Tai Bennett
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "02 Jan 2006"
     defaultTheme: light
@@ -51,12 +51,12 @@ params:
     math: true
     profileMode:
           enabled: true
-          title: Dylan Laplace Mermoud
+          title: Duncan Tai Bennett
           subtitle: "I am a postdoctoral researcher at the applied mathematics department of ENSTA from the Institut Polytechnique de Paris. I am also affiliated with the combinatorial optimization team in the CEDRIC lab at the Conservatoire National des Arts et Métiers. I work with Andrea Simonetto, and Sourour Elloumi. My research focuses on quantum algorithms for optimization problems, algebraic combinatorics and cooperative game theory.<br><br>In September 2026, I will join the LIP6 at Sorbonne Université as an assistant professor, in the Décision team."
-          imageUrl: "photo.png"
+          imageUrl: "headshot.jpg"
           imageWidth: 160
           imageHeight: 160
-          imageTitle: Dylan Laplace Mermoud
+          imageTitle: Duncan Tai Bennett
           buttons:
             - name: Portfolio
               url: portfolio/
@@ -69,32 +69,28 @@ params:
             # - name: Archive
             #   url: archive/
     socialIcons:
-        - name: hal
-          url: https://cv.hal.science/dylan-laplace-mermoud
-        - name: arXiv
-          url: http://arxiv.org/a/laplacemermoud_d_1
-        - name: orcid
-          url: https://orcid.org/0000-0002-1508-9656
+        # - name: hal
+        #   url: https://cv.hal.science/dylan-laplace-mermoud
+        # - name: arXiv
+        #   url: http://arxiv.org/a/laplacemermoud_d_1
+        - name: substack
+          url: https://substack/@backpropagatingpear
         # - name: CV
         #   url: cv.pdf
         # - name: Location
         #   url: location/
         # - name: Office Hours
         #   url: officehours/
-        - name: Google Scholar
-          url: https://scholar.google.com/citations?user=haznRHoAAAAJ&hl=fr&oi=ao
         # - name: YouTube
         #   url: https://www.youtube.com/@pmichaillat
-        - name: GitLab
-          url: https://gitlab.com/DylanLaplaceMermoud
         - name: GitHub
-          url: https://github.com/DylanLaplaceMermoud
+          url: https://github.com/tai-bennett
         # - name: Substack
         #   url: https://pmichaillat.substack.com
         # - name: Twitter
         #   url: https://twitter.com/pmichaillat
         - name: Email
-          url: mailto:dylan.laplace.mermoud@gmail.com
+          url: mailto:bennettduncantai@gmail.com
 
     assets:
         disableHLJS: true
@@ -108,8 +104,8 @@ params:
         hiddenInList: false
         hiddenInSingle: true
     label:
-      text: "Dylan Laplace Mermoud"
-      icon: logo2.ico
+      text: "Duncan Tai Bennett"
+      icon: pear.jpg
       iconHeight: 18
 
 markup:
