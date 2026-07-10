@@ -27,11 +27,11 @@ menu:
         #   weight: 4
 
 params:
-    description: "I am a postdoctoral researcher in quantum algorithms at ENSTA - Institut Polytechnique de Paris."
+    description: "I am a Mathematics PhD from the University of Arizona specializing in dynamical systems and machine learning. My research analyzes machine learning models as dynamical systems and interprets the dynamical properties in the ML setting. My dissertation is titled Computer-Assisted Proofs of Chaos in the Long Short-Term Memory Model and I was advised by Dr. Marek Rychlik."
     author: Duncan Tai Bennett
     # googleAnalyticsID: "G-XXXXX"
     DateFormat: "02 Jan 2006"
-    defaultTheme: light
+    defaultTheme: dark
     hideFooter: false
     disableThemeToggle: true
     ShowShareButtons: false
@@ -52,7 +52,7 @@ params:
     profileMode:
           enabled: true
           title: Duncan Tai Bennett
-          subtitle: "I am a postdoctoral researcher at the applied mathematics department of ENSTA from the Institut Polytechnique de Paris. I am also affiliated with the combinatorial optimization team in the CEDRIC lab at the Conservatoire National des Arts et Métiers. I work with Andrea Simonetto, and Sourour Elloumi. My research focuses on quantum algorithms for optimization problems, algebraic combinatorics and cooperative game theory.<br><br>In September 2026, I will join the LIP6 at Sorbonne Université as an assistant professor, in the Décision team."
+          subtitle: "I am a Mathematics PhD from the University of Arizona specializing in dynamical systems and machine learning. My research analyzes machine learning models as dynamical systems and interprets the dynamical properties in the ML setting. My dissertation is titled Computer-Assisted Proofs of Chaos in the Long Short-Term Memory Model and I was advised by Dr. Marek Rychlik."
           imageUrl: "headshot.jpg"
           imageWidth: 160
           imageHeight: 160
@@ -75,6 +75,8 @@ params:
         #   url: http://arxiv.org/a/laplacemermoud_d_1
         - name: substack
           url: https://substack/@backpropagatingpear
+        - name: linkedin
+          url: https://linkedin/in/bennettduncantai
         # - name: CV
         #   url: cv.pdf
         # - name: Location
@@ -95,11 +97,11 @@ params:
     assets:
         disableHLJS: true
         disableScrollBarStyle: true
-        favicon: "/favicon.ico"
-        favicon16x16: "/favicon-16x16.png"
-        favicon32x32: "/favicon-32x32.png"
-        apple_touch_icon: "/apple-touch-icon.png"
-        mask_icon: "/safari-pinned-tab.svg"
+        favicon: "/pear.jpg" 
+        favicon16x16: "/pear.jpg"
+        favicon32x32: "/pear.jpg"
+        apple_touch_icon: "/pear.jpg"
+        mask_icon: "/pear.jpg"
     cover:
         hiddenInList: false
         hiddenInSingle: true
