@@ -74,9 +74,9 @@ params:
         # - name: arXiv
         #   url: http://arxiv.org/a/laplacemermoud_d_1
         - name: substack
-          url: https://substack/@backpropagatingpear
+          url: https://substack.com/@backpropagatingpear
         - name: linkedin
-          url: https://linkedin/in/bennettduncantai
+          url: https://linkedin.com/in/bennettduncantai
         # - name: CV
         #   url: cv.pdf
         # - name: Location
