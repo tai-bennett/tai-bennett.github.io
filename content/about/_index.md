@@ -24,3 +24,4 @@ My research interests include (1) building production ready machine learning pro
 #### Chaos in LSTMs (Aug 2025)
 #### R-Tutorial: Basics for NLP (Mar 2023)
 #### Variational Autoencoders (April 2022)
+#### Homotopy Type of the Order Complex of Cyclic Groups (Mar 2018)
