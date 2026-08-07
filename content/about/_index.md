@@ -8,7 +8,7 @@ I am a recent Mathematics PhD graduate from the University of Arizona. My disser
 
 <!-- This is the table of contents -->
 <a href="#education" class="button research">Education</a> 
-<a href="#research-interests" class="button research">Research</a> 
+<a href="#research-interests" class="button research">Research</a>
 <a href="#talks" class="button research">Talks</a>
 
 
@@ -25,3 +25,6 @@ My research interests include (1) building production ready machine learning pro
 #### R-Tutorial: Basics for NLP (Mar 2023)
 #### Variational Autoencoders (April 2022)
 #### Homotopy Type of the Order Complex of Cyclic Groups (Mar 2018)
+
+## More About Me
+Hello
